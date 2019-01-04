@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const GroupSummary = ({ title, creator, numMembers, updates }) => (
+const GroupSummary = ({
+  title, creator, numMembers, updates
+}) => (
   <div>
     <div>{title || `${creator} and ${numMembers - 1} more...`}</div>
     <div className="chat-icon">{updates === 0 ? '' : updates}</div>

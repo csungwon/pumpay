@@ -21,7 +21,7 @@ const UserAvatar = ({ imageUrl, classes }) => (imageUrl ? (
 
 UserAvatar.propTypes = {
   imageUrl: PropTypes.string,
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired // eslint-disable-line react/forbid-prop-types
 };
 
 UserAvatar.defaultProps = {

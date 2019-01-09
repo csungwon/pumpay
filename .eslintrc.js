@@ -6,6 +6,7 @@ module.exports = {
     'arrow-parens': ['error', 'as-needed']
   },
   env: {
+    browser: true,
     jest: true
   },
   parser: 'babel-eslint'

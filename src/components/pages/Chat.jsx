@@ -88,8 +88,7 @@ export default class Chat extends Component {
     // Same as:
     // const searchKey = this.state.searchKey;
     // const chats = this.state.chats;
-    const data = chats.filter(chat => new RegExp(searchKey, 'i').test(chat.user.username));
-    data.sort((chat1, chat2) => {
+    const data = chats.filter(chat => new RegExp(searchKey, 'i').test(chat.user.username)).sort((chat1, chat2) => {
       if (chat1.lastChat.createdAt > chat2.lastChat.createdAt) return -1;
       if (chat1.lastChat.createdAt < chat2.lastChat.createdAt) return 1;
       return 0;

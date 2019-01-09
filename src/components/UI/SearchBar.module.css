@@ -1,0 +1,29 @@
+.Container {
+  border: 2px solid #bce0fd;
+  padding: 0.5em 2em;
+  margin: 1em;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  /* border-width
+  border-style
+  border-color */
+}
+
+.SearchIcon {
+  position: absolute;
+  left: 12px;
+}
+
+.Input {
+  display: block;
+  margin-left: 16px;
+  font-size: 1.5em;
+  border: none;
+  outline: none;
+}
+
+.Input::placeholder {
+  opacity: 0.6;
+}

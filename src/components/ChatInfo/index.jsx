@@ -20,7 +20,7 @@ const ChatInfo = ({ user: { imageUrl, username }, lastChat: { message, createdAt
 
 ChatInfo.propTypes = {
   user: PropTypes.shape({
-    imageUrl: PropTypes.string.isRequired,
+    imageUrl: PropTypes.string,
     username: PropTypes.string.isRequired
   }).isRequired,
   lastChat: PropTypes.shape({

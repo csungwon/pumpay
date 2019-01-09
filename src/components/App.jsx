@@ -1,25 +1,19 @@
 import React from 'react';
-import logo from '../logo.svg';
-import './App.css';
+
+import FriendInfo from './FriendInfo';
+
+const user = {
+  username: 'Sean Cho'
+};
+
+const lastChat = {
+  message: 'Sean added "Feb 2019 Rent"',
+  createdAt: '2019-01-23'
+};
 
 const App = () => (
   <div className="App">
-    <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>
-        Edit
-        <code>src/App.js</code>
-        and save to reload!
-      </p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
-    </header>
+    <FriendInfo user={user} lastChat={lastChat} />
   </div>
 );
 

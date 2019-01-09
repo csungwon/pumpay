@@ -5,6 +5,7 @@
   position: relative;
   display: flex;
   align-items: center;
+  transition: border-color 150ms ease-in;
 
   /* border-width
   border-style
@@ -17,6 +18,7 @@
 }
 
 .Input {
+  width: 100%;
   display: block;
   margin-left: 16px;
   font-size: 1.5em;
@@ -26,4 +28,8 @@
 
 .Input::placeholder {
   opacity: 0.6;
+}
+
+.Container:focus-within {
+  border-color: #2699fb;
 }

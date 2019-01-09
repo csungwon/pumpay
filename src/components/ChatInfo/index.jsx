@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Avatar from '../UI/Avatar';
 import styles from './style.module.css';
 
-const FriendInfo = ({ user: { imageUrl, username }, lastChat: { message, createdAt } }) => (
+const ChatInfo = ({ user: { imageUrl, username }, lastChat: { message, createdAt } }) => (
   <div className={styles.Container}>
     <div className={styles.AvatarContainer}>
       <Avatar imageUrl={imageUrl} />
@@ -18,7 +18,7 @@ const FriendInfo = ({ user: { imageUrl, username }, lastChat: { message, created
   </div>
 );
 
-FriendInfo.propTypes = {
+ChatInfo.propTypes = {
   user: PropTypes.shape({
     imageUrl: PropTypes.string.isRequired,
     username: PropTypes.string.isRequired
@@ -29,4 +29,4 @@ FriendInfo.propTypes = {
   }).isRequired
 };
 
-export default FriendInfo;
+export default ChatInfo;

@@ -1,19 +1,35 @@
 import React from 'react';
 
-import FriendInfo from './FriendInfo';
+import ChatInfoList from './ChatInfoList';
 
-const user = {
-  username: 'Sean Cho'
-};
-
-const lastChat = {
-  message: 'Sean added "Feb 2019 Rent"',
-  createdAt: '2019-01-23'
-};
+const data = [
+  {
+    id: 1,
+    user: {
+      imageUrl: '',
+      username: 'Sean Cho'
+    },
+    lastChat: {
+      message: 'hello',
+      createdAt: '2019-01-01'
+    }
+  },
+  {
+    id: 2,
+    user: {
+      imageUrl: '',
+      username: 'Dave Kwon'
+    },
+    lastChat: {
+      message: 'helloooooo',
+      createdAt: '2019-01-02'
+    }
+  }
+];
 
 const App = () => (
   <div className="App">
-    <FriendInfo user={user} lastChat={lastChat} />
+    <ChatInfoList data={data} />
   </div>
 );
 

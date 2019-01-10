@@ -6,7 +6,7 @@ import Avatar from '../UI/Avatar';
 const FriendInfo = ({ friend: { imageUrl, username, balance } }) => (
   <div className={styles.Container}>
     <div className={styles.Avatar}>
-      <Avatar imageUrl={imageUrl} />
+      <Avatar imageUrl={imageUrl} size={40} />
     </div>
     <div className={styles.username}>{username}</div>
     {balance !== 0 && (

@@ -11,7 +11,7 @@ const UserInfo = ({
   <div className={styles.Container}>
     <div className={styles.Row}>
       <div className={styles.AvatarContainer}>
-        <Avatar imageUrl={imageUrl} large />
+        <Avatar imageUrl={imageUrl} size={80} />
         <span className={styles.Username}>{username}</span>
       </div>
     </div>

@@ -2,26 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Avatar from '@material-ui/core/Avatar';
 import PersonIcon from '@material-ui/icons/Person';
-import { withStyles } from '@material-ui/core/styles';
 
-const styles = {
-  defaultSize: {
-    width: 47,
-    height: 47
-  },
-  large: {
-    width: 60,
-    height: 60
-  }
-};
-
-const UserAvatar = ({ imageUrl, classes, large }) => {
-  const className = large ? classes.large : classes.defaultSize;
+const UserAvatar = ({ imageUrl, size }) => {
+  const style = {
+    width: size,
+    height: size
+  };
 
   return imageUrl ? (
-    <Avatar src={imageUrl} className={className} />
+    <Avatar src={imageUrl} style={style} />
   ) : (
-    <Avatar className={className}>
+    <Avatar style={style}>
       <PersonIcon />
     </Avatar>
   );
@@ -29,13 +20,12 @@ const UserAvatar = ({ imageUrl, classes, large }) => {
 
 UserAvatar.propTypes = {
   imageUrl: PropTypes.string,
-  classes: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
-  large: PropTypes.bool
+  size: PropTypes.number
 };
 
 UserAvatar.defaultProps = {
   imageUrl: null,
-  large: false
+  size: 47
 };
 
-export default withStyles(styles)(UserAvatar);
+export default UserAvatar;

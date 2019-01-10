@@ -8,24 +8,34 @@ const styles = {
   defaultSize: {
     width: 47,
     height: 47
+  },
+  large: {
+    width: 60,
+    height: 60
   }
 };
 
-const UserAvatar = ({ imageUrl, classes }) => (imageUrl ? (
-  <Avatar src={imageUrl} className={classes.defaultSize} />
-) : (
-  <Avatar className={classes.defaultSize}>
-    <PersonIcon />
-  </Avatar>
-));
+const UserAvatar = ({ imageUrl, classes, large }) => {
+  const className = large ? classes.large : classes.defaultSize;
+
+  return imageUrl ? (
+    <Avatar src={imageUrl} className={className} />
+  ) : (
+    <Avatar className={className}>
+      <PersonIcon />
+    </Avatar>
+  );
+};
 
 UserAvatar.propTypes = {
   imageUrl: PropTypes.string,
-  classes: PropTypes.object.isRequired // eslint-disable-line react/forbid-prop-types
+  classes: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
+  large: PropTypes.bool
 };
 
 UserAvatar.defaultProps = {
-  imageUrl: null
+  imageUrl: null,
+  large: false
 };
 
 export default withStyles(styles)(UserAvatar);

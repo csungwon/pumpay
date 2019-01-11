@@ -1,9 +1,9 @@
 import React from 'react';
-import Friends from '../pages/Friends';
+import BillDescriptionStep from '../BillDescriptionStep';
 
 const App = () => (
   <div className="App">
-    <Friends />
+    <BillDescriptionStep />
   </div>
 );
 

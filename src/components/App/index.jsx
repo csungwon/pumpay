@@ -33,8 +33,8 @@ const App = () => (
   <div>
     <SelectedUsers
       friends={friends}
-      onUserDelete={() => {
-        console.log('delete');
+      onUserDelete={userId => () => {
+        console.log(`delete user ${userId}`);
       }}
     />
   </div>

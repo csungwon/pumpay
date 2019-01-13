@@ -70,8 +70,8 @@ class App extends React.Component {
     const data = friends
       .filter(friend => new RegExp(searchKey, 'i').test(friend.username))
       .sort((friend1, friend2) => {
-        if (friend1.useranme > friend2.useranme) return -1;
-        if (friend1.useranme < friend2.useranme) return 1;
+        if (friend1.username < friend2.username) return -1;
+        if (friend1.username > friend2.username) return 1;
         return 0;
       });
     const selectedUsers = friends.filter(friend => selectedUserIds.has(friend.id));

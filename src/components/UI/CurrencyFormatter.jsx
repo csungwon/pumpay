@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import NumberFormat from 'react-number-format';
 
 const CurrencyFormatter = ({
-  inputRef, onChange, displayType, ...other
+  inputRef, onChange, displayType, prefix, ...other
 }) => (
   <NumberFormat
     {...other}
@@ -11,6 +11,7 @@ const CurrencyFormatter = ({
     onValueChange={({ value }) => {
       onChange({ target: { value } });
     }}
+    prefix={prefix ? '$' : ''}
     decimalScale={2}
     allowNegative={false}
     displayType={displayType}
@@ -20,13 +21,17 @@ const CurrencyFormatter = ({
 );
 
 CurrencyFormatter.propTypes = {
-  inputRef: PropTypes.func.isRequired,
-  onChange: PropTypes.func.isRequired,
-  displayType: PropTypes.string
+  inputRef: PropTypes.func,
+  onChange: PropTypes.func,
+  displayType: PropTypes.string,
+  prefix: PropTypes.bool
 };
 
 CurrencyFormatter.defaultProps = {
-  displayType: 'input'
+  displayType: 'input',
+  inputRef: null,
+  onChange: null,
+  prefix: false
 };
 
 export default CurrencyFormatter;

@@ -12,7 +12,7 @@ import Avatar from '../UI/Avatar';
 
 const styles = {
   root: {
-    maxHeight: '70vh',
+    flexGrow: 1,
     overflowY: 'auto'
   }
 };
@@ -22,13 +22,13 @@ const SelectUserList = ({
 }) => (
   <List classes={{ root: classes.root }}>
     {friends.map(({ id, imageUrl, username }) => (
-      <ListItem key={id}>
+      <ListItem key={id} component="label" htmlFor={id} button>
         <ListItemAvatar>
           <Avatar imageUrl={imageUrl} />
         </ListItemAvatar>
-        <ListItemText primary={username} />
+        <ListItemText primary={username} primaryTypographyProps={{ noWrap: true }} />
         <ListItemSecondaryAction>
-          <Checkbox onChange={onSelect(id)} checked={selectedFriends.has(id)} />
+          <Checkbox onChange={onSelect(id)} checked={selectedFriends.has(id)} inputProps={{ id }} />
         </ListItemSecondaryAction>
       </ListItem>
     ))}

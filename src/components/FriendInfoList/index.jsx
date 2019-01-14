@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import List from '@material-ui/core/List';
+
 import FriendInfo from '../FriendInfo';
 
 const FriendInfoList = ({ data }) => (
-  <div>
+  <List>
     {data.map(friend => (
       <FriendInfo key={friend.id} friend={friend} />
     ))}
-  </div>
+  </List>
 );
 
 FriendInfoList.propTypes = {

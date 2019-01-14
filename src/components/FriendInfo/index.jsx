@@ -1,21 +1,39 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './style.module.css';
-import Avatar from '../UI/Avatar';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemAvatar from '@material-ui/core/ListItemAvatar';
+import ListItemText from '@material-ui/core/ListItemText';
+import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
 
-const FriendInfo = ({ friend: { imageUrl, username, balance } }) => (
-  <div className={styles.Container}>
-    <div className={styles.Avatar}>
-      <Avatar imageUrl={imageUrl} size={40} />
-    </div>
-    <div className={styles.username}>{username}</div>
+import Avatar from '../UI/Avatar';
+import CurrencyFormatter from '../UI/CurrencyFormatter';
+
+const styles = {
+  balance: {
+    display: 'flex',
+    flexDirection: 'column',
+    fontWeight: 'bold'
+  }
+};
+
+const FriendInfo = ({ friend: { imageUrl, username, balance }, classes }) => (
+  <ListItem button>
+    <ListItemAvatar>
+      <Avatar imageUrl={imageUrl} />
+    </ListItemAvatar>
+    <ListItemText primary={username} primaryTypographyProps={{ noWrap: true }} />
     {balance !== 0 && (
-      <div className={[styles.balance, balance > 0 ? styles.owed : styles.owe].join(' ')}>
-        <span className={styles.sign}>{balance > 0 ? 'owed' : 'owe'}</span>
-        <span className={styles.amount}>{`$${Math.abs(balance).toFixed(2)}`}</span>
+      <div className={classes.balance} style={{ color: balance > 0 ? '#3ebc2e' : '#ff6f00' }}>
+        <Typography variant="caption" align="right" color="inherit">
+          {balance > 0 ? 'Owed' : 'Owe'}
+        </Typography>
+        <Typography variant="title" color="inherit">
+          <CurrencyFormatter displayType="text" value={Math.abs(balance)} prefix />
+        </Typography>
       </div>
     )}
-  </div>
+  </ListItem>
 );
 
 FriendInfo.propTypes = {
@@ -23,7 +41,8 @@ FriendInfo.propTypes = {
     imageUrl: PropTypes.string,
     username: PropTypes.string.isRequired,
     balance: PropTypes.number.isRequired
-  }).isRequired
+  }).isRequired,
+  classes: PropTypes.object.isRequired // eslint-disable-line react/forbid-prop-types
 };
 
-export default FriendInfo;
+export default withStyles(styles)(FriendInfo);

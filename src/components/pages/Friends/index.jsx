@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import FriendInfoList from '../FriendInfoList';
-import UserInfo from '../UserInfo';
-import SearchBar from '../UI/SearchBar';
+import FriendInfoList from './FriendInfoList';
+import UserInfo from './UserInfo';
+import SearchBar from '../../UI/SearchBar';
 
 const user = {
   imageUrl: 'https://github.com/csungwon.png?size=60',

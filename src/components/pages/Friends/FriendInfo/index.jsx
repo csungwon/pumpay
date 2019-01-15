@@ -6,8 +6,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 
-import Avatar from '../UI/Avatar';
-import CurrencyFormatter from '../UI/CurrencyFormatter';
+import Avatar from '../../../UI/Avatar';
+import CurrencyFormatter from '../../../UI/CurrencyFormatter';
 
 const styles = {
   balance: {

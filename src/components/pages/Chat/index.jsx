@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import SearchBar from '../UI/SearchBar';
-import ChatInfoList from '../ChatInfoList';
+import SearchBar from '../../UI/SearchBar';
+import ChatInfoList from './ChatInfoList';
 
 // mock data for backend server
 const chatsMock = [

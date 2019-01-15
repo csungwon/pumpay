@@ -5,7 +5,7 @@ import Clear from '@material-ui/icons/Clear';
 import IconButton from '@material-ui/core/IconButton';
 import { withStyles } from '@material-ui/core/styles';
 
-import Avatar from '../UI/Avatar';
+import Avatar from '../../../UI/Avatar';
 
 const styles = theme => ({
   container: {

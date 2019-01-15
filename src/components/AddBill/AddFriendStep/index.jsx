@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 
-import SelectedUsers from '../SelectedUsers';
-import SelectedUserList from '../SelectUserList';
-import SearchBar from '../UI/SearchBar';
+import SelectedUsers from './SelectedUsers';
+import SelectedUserList from './SelectUserList';
+import SearchBar from '../../UI/SearchBar';
 
 const AddFriendStep = ({
   selectedUsers,
@@ -23,13 +23,7 @@ const AddFriendStep = ({
       selectedFriends={selectedUserIds}
       onSelect={handleCheckboxToggle}
     />
-    <Button
-      variant="contained"
-      color="primary"
-      onClick={onNextButton}
-      size="large"
-      fullWidth
-    >
+    <Button variant="contained" color="primary" onClick={onNextButton} size="large" fullWidth>
       Next: Add Friends
     </Button>
   </div>

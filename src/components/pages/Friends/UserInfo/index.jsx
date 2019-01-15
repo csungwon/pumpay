@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './style.module.css';
-import Avatar from '../UI/Avatar';
+import Avatar from '../../../UI/Avatar';
 
 const UserInfo = ({
   user: {

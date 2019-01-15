@@ -8,7 +8,7 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Checkbox from '@material-ui/core/Checkbox';
 import { withStyles } from '@material-ui/core/styles';
 
-import Avatar from '../UI/Avatar';
+import Avatar from '../../../UI/Avatar';
 
 const styles = {
   root: {

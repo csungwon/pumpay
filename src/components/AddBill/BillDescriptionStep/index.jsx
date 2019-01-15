@@ -5,7 +5,7 @@ import Button from '@material-ui/core/Button';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import { withStyles } from '@material-ui/core/styles';
 
-import CurrencyFormatter from '../UI/CurrencyFormatter';
+import CurrencyFormatter from '../../UI/CurrencyFormatter';
 
 const styles = theme => ({
   container: {

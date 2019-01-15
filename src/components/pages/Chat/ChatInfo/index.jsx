@@ -6,7 +6,7 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import ListItemText from '@material-ui/core/ListItemText';
 import { withStyles } from '@material-ui/core/styles';
 
-import Avatar from '../UI/Avatar';
+import Avatar from '../../../UI/Avatar';
 
 const styles = theme => ({
   typography: {
